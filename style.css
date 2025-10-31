@@ -1,6 +1,6 @@
 :root {
   --accent: #4f46e5;
-  --accent-light: #6366f1;
+  --accent-light: #898be9;
   --bg: #fafafa;
   --text: #1e1e1e;
   --max-width: 900px;
@@ -19,11 +19,15 @@ body {
   line-height: 1.6;
 }
 
+/* ---------- Layout ---------- */
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem 1rem;
 }
+
+/* ---------- Header ---------- */
 
 header {
   background: white;
@@ -56,6 +60,8 @@ nav a {
 nav a:hover {
   color: var(--accent);
 }
+
+/* ---------- Hero ---------- */
 
 #hero {
   text-align: center;
@@ -90,25 +96,35 @@ nav a:hover {
   background: #f0f0ff;
 }
 
+/* Smaller accent button (for inside cards) */
 .btn.small {
   background: var(--accent);
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  align-self: flex-start;
+  transition: background 0.2s ease;
 }
 
 .btn.small:hover {
   background: var(--accent-light);
 }
 
+/* ---------- Sections ---------- */
+
 section {
   padding: 3rem 0;
 }
 
 h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 2rem;
   color: var(--accent);
 }
+
+/* ---------- Projects Grid ---------- */
 
 .grid {
   display: grid;
@@ -122,6 +138,10 @@ h2 {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
 }
 
 .card:hover {
@@ -132,17 +152,23 @@ h2 {
   width: 100%;
   height: 160px;
   object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
 .card h3 {
-  padding: 1rem;
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .card p {
-  padding: 0 1rem 1rem;
   color: #555;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
+
+/* ---------- Footer ---------- */
 
 footer {
   background: #111;
@@ -151,6 +177,8 @@ footer {
   padding: 1.5rem;
   font-size: 0.9rem;
 }
+
+/* ---------- Lists (for About/Contact) ---------- */
 
 ul {
   list-style: none;
@@ -170,6 +198,8 @@ ul a:hover {
   text-decoration: underline;
 }
 
+/* ---------- Responsive ---------- */
+
 @media (max-width: 600px) {
   #hero h2 {
     font-size: 2rem;
@@ -178,5 +208,13 @@ ul a:hover {
   .nav {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1rem;
   }
 }
