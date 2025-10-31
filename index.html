@@ -1,16 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Your Name — Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anna Poutanen | Software Engineering Student</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.png" />
 </head>
 <body>
-  <header><h1>Your Name</h1></header>
-  <main>
-    <p>Hello — this is my personal site. Replace this text with your own.</p>
-  </main>
-  <footer><small>© YEAR Your Name</small></footer>
+  <header>
+    <div class="container nav">
+      <h1 class="logo">Anna Poutanen</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="container">
+      <h2>Hi, I’m Anna!</h2>
+      <p>
+        I’m a first-year <strong>Software Engineering student</strong> passionate about 
+        learning, building, and exploring creative tech projects.  
+        This site showcases my projects, experiments, and growth as a developer.
+      </p>
+      <a href="#projects" class="btn">See My Projects</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I’m currently studying Software Engineering at The University of Waterloo.
+        My interests include web development, data visualization, and automation.  
+        I enjoy side projects that combine design and logic — like building this website
+      </p>
+      <p>
+        Skills: <strong>Python</strong>, <strong>C</strong>, <strong>HTML</strong>, <strong>CSS</strong>, 
+        <strong>Git</strong>, and <strong>SQL</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="images/spotify-mood.jpg" alt="Spotify Mood Analyzer" />
+          <h3>Spotify Mood Analyzer</h3>
+          <p>
+            A Python project that connects to Spotify’s API to analyze playlists by
+            <em>energy</em>, <em>valence</em>, and <em>danceability</em> to visualize your listening mood.
+          </p>
+          <a href="#" class="btn small">View on GitHub</a>
+        </div>
+
+        <div class="card">
+          <img src="images/todo-app.jpg" alt="Todo App" />
+          <h3>MySQL Todo App</h3>
+          <p>
+            A simple task management app using Python, MySQL, and Flask.  
+            Supports creating, editing, and deleting tasks with due dates.
+          </p>
+          <a href="#" class="btn small">View on GitHub</a>
+        </div>
+
+        <div class="card">
+          <img src="images/website.jpg" alt="Personal Website" />
+          <h3>Personal Portfolio</h3>
+          <p>
+            This website — built from scratch using only HTML and CSS — to showcase my
+            projects and what I’m learning as a software engineering student.
+          </p>
+          <a href="#" class="btn small">View Code</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>
+        I’m always open to connecting with other students, developers, or potential co-op mentors.  
+        You can reach me here:
+      </p>
+      <ul>
+        <li><a href="mailto:a2poutan@uwaterloo.ca">a2poutan@uwaterloo.ca</a></li>
+        <li><a href="https://linkedin.com/in/annapoutanen" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/anna-poutanen" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Anna Poutanen</p>
+    </div>
+  </footer>
 </body>
 </html>
