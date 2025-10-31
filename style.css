@@ -1,2 +1,182 @@
-body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 780px; margin: 2rem auto; padding: 0 1rem; }
-header h1 { margin: 0; }
+:root {
+  --accent: #4f46e5;
+  --accent-light: #6366f1;
+  --bg: #fafafa;
+  --text: #1e1e1e;
+  --max-width: 900px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+header {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+nav a {
+  color: var(--text);
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+#hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  color: white;
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: white;
+  color: var(--accent);
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #f0f0ff;
+}
+
+.btn.small {
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.btn.small:hover {
+  background: var(--accent-light);
+}
+
+section {
+  padding: 3rem 0;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.card p {
+  padding: 0 1rem 1rem;
+  color: #555;
+}
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+
+ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+ul li {
+  margin: 0.5rem 0;
+}
+
+ul a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+ul a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  #hero h2 {
+    font-size: 2rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
