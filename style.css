@@ -66,7 +66,7 @@ nav a:hover {
 #hero {
   text-align: center;
   padding: 4rem 1rem;
-  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  background: linear-gradient(135deg, var(--accent-light), var(--accent-light));
   color: white;
 }
 
@@ -217,4 +217,72 @@ ul a:hover {
   .card {
     padding: 1rem;
   }
+}
+
+/* ----- Dark Mode ----- */
+.dark {
+  --bg: #1a1a1a;
+  --text: #f3f3f3;
+  --accent: #a8b4ff;
+  --accent-light: #6a74d9;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.dark header {
+  background: #222;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+
+.dark .card {
+  background: #222;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+.dark footer {
+  background: #000;
+}
+
+/* Toggle button */
+.dark-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 0.7rem 1rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s, background 0.3s;
+  z-index: 50;
+}
+
+.dark-toggle:hover {
+  transform: scale(1.1);
+  background: var(--accent-light);
+}
+
+/* ----- Smooth Fade-in Animation ----- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----- Enhanced Project Hover Effect ----- */
+.card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
