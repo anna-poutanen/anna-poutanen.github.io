@@ -9,115 +9,360 @@
 </head>
 
 <body>
+  <div class="cursor-glow"></div>
+  
   <header>
     <div class="container nav">
-      <h1 class="logo">Anna Poutanen</h1>
+      <h1 class="logo">
+        <span class="logo-letter">A</span>
+        <span class="logo-letter">P</span>
+      </h1>
       <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
     </div>
   </header>
 
   <section id="hero">
-    <div class="container">
-      <h2>Hi, I’m Anna!</h2>
-      <p>
-        I’m a first-year <strong>Software Engineering student</strong> studying at the University of Waterloo passionate about 
-        learning, building, and exploring creative tech projects.  
-        This site showcases my projects, experiments, and growth as a developer.
-      </p>
-      <a href="#projects" class="btn">See My Projects</a>
-    </div>
-  </section>
-
-  <section id="about" class="fade-in">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I’m currently in my 1A term studying Software Engineering at the University of Waterloo.
-        My interests include data visualization, web development, and automation.  
-      </p>
-      <p>
-        Skills: <strong>Python</strong>, <strong>C</strong>, <strong>HTML</strong>, <strong>CSS</strong>, 
-        <strong>Git</strong>, and <strong>SQL</strong>.
-      </p>
-    </div>
-  </section>
-
-  <section id="projects" class="fade-in">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Spotify Mood Analyzer</h3>
-          <p>
-            A Python project that connects to Spotify’s API to analyze user's music taste and playlists by
-            <em>energy</em>, <em>valence</em>, and <em>organization</em> to visualize your listening mood.
-          </p>
-            <a href="#" class="btn small">View on GitHub</a>
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="hero-label">Software Engineering Student</p>
+        <h2 class="hero-title">
+          <span class="line">Hi, I'm</span>
+          <span class="line highlight">Anna Poutanen</span>
+        </h2>
+        <p class="hero-description">
+          First-year at University of Waterloo, building creative tech projects 
+          and exploring the intersection of code, design, and problem-solving.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">Explore Projects</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
         </div>
+      </div>
+      <div class="hero-decoration">
+        <div class="floating-card card-1">
+          <span class="emoji">💻</span>
+        </div>
+        <div class="floating-card card-2">
+          <span class="emoji">🚀</span>
+        </div>
+        <div class="floating-card card-3">
+          <span class="emoji">⚡</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-        <div class="card">
-          <h3>Pathfinder Visualization</h3>
-          <p>
-            An interactive web app that visualizes pathfinding algorithms.  
-            Built using <strong>Python</strong>, <strong>JavaScript</strong>, and <strong>HTML/CSS</strong>, 
-            this project helps users see how algorithms explore and find optimal paths in real-time.
+  <section id="about" class="reveal-section">
+    <div class="container about-container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p class="large-text">
+            I'm currently in my 1A term studying Software Engineering at the University of Waterloo (Sept. 2025 – April 2030).
           </p>
-          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            <a href="https://github.com/anna-poutanen/pathfinder-visualizer" 
-              target="_blank" class="btn small">View Code on GitHub</a>
-            <a href="https://pathfinder-visualizer-production.up.railway.app/" 
-              target="_blank" class="btn small">View Project</a>
+          <p>
+            My interests span <strong>data visualization</strong>, <strong>web development</strong>, 
+            and <strong>automation</strong>. I love turning ideas into functional projects and 
+            learning new technologies along the way.
+          </p>
+          <div class="skills-container">
+            <h3 class="skills-title">Languages</h3>
+            <div class="skills-grid">
+              <div class="skill-tag">Java</div>
+              <div class="skill-tag">Python</div>
+              <div class="skill-tag">C/C++</div>
+              <div class="skill-tag">JavaScript</div>
+              <div class="skill-tag">HTML/CSS</div>
+              <div class="skill-tag">SQL</div>
+            </div>
+            <h3 class="skills-title">Tools & Libraries</h3>
+            <div class="skills-grid">
+              <div class="skill-tag">Git</div>
+              <div class="skill-tag">VS Code</div>
+              <div class="skill-tag">pandas</div>
+              <div class="skill-tag">NumPy</div>
+              <div class="skill-tag">Matplotlib</div>
+              <div class="skill-tag">React</div>
+              <div class="skill-tag">Flask</div>
+            </div>
           </div>
         </div>
-
-        <div class="card">
-          <h3>MySQL Todo App</h3>
-          <p>
-            A task management app using Python, MySQL, and Flask.  
-            Supports creating, editing, and deleting tasks with due dates.
-          </p>
-          <a href="#" class="btn small">View on GitHub</a>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-number">1A</div>
+            <div class="stat-label">Current Term</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4+</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">6+</div>
+            <div class="stat-label">Work Experiences</div>
+          </div>
         </div>
-
-        <div class="card">
-          <h3>Personal Portfolio</h3>
-          <p>
-            This website — built using HTML, CSS, and Javascript — to showcase my
-            projects and what I’m learning as a software engineering student.
-          </p>
-          <a href="https://github.com/anna-poutanen/anna-poutanen.github.io" class="btn small">View Code on GitHub</a>
-        </div>
-
-
       </div>
     </div>
   </section>
 
-
-  <section id="contact" class="fade-in">
+  <section id="experience" class="reveal-section">
     <div class="container">
-      <h2>Contact</h2>
-      <p>
-        I’m always open to connecting with other students, developers, or potential co-op mentors.  
-        You can reach me here:
-      </p>
-      <ul>
-        <li><a href="mailto:a2poutan@uwaterloo.ca">a2poutan@uwaterloo.ca</a></li>
-        <li><a href="https://linkedin.com/in/annapoutanen" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/anna-poutanen" target="_blank">GitHub</a></li>
-      </ul>
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item glass">
+          <div class="timeline-date">Feb 2025 – June 2025</div>
+          <div class="timeline-content">
+            <h3>Data Analyst Volunteer</h3>
+            <p class="company">Mount Sinai Hospital • Toronto, ON</p>
+            <ul>
+              <li>Collaborated with a team to develop a Python algorithm for organizing, sorting, and analyzing lab data</li>
+              <li>Utilized pandas and NumPy Python libraries to improve data handling efficiency and accuracy</li>
+              <li>Managed code development using Git for version control</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item glass">
+          <div class="timeline-date">May 2025 – Aug 2025</div>
+          <div class="timeline-content">
+            <h3>Math Tutor</h3>
+            <p class="company">Kumon Tutoring Center • Toronto, ON</p>
+            <ul>
+              <li>Tutored students grades K-6 in math, reinforcing foundational concepts and problem-solving skills</li>
+              <li>Tracked progress and gave feedback to improve accuracy, speed, and confidence</li>
+              <li>Supported a positive learning environment and assisted with class operations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item glass">
+          <div class="timeline-date">March 2025 – July 2025</div>
+          <div class="timeline-content">
+            <h3>Assistant Volleyball Coach</h3>
+            <p class="company">Titans Volleyball Association • Toronto, ON</p>
+            <ul>
+              <li>Coached players ages 12-14 through leading drills, officiating gameplay, and providing individualized instruction</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item glass">
+          <div class="timeline-date">Aug 2024 – Sept 2024</div>
+          <div class="timeline-content">
+            <h3>Volleyball Camp Counselor and Assistant Coach</h3>
+            <p class="company">Camp Madawaska • Bancroft, ON</p>
+            <ul>
+              <li>Served as an overnight counselor, supervising a cabin of 14 campers ages 14-15</li>
+              <li>Assisted as a volleyball coach by teaching fundamental skills, designing drills, and ensuring sportsmanship</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item glass">
+          <div class="timeline-date">June 2023 – Aug 2023</div>
+          <div class="timeline-content">
+            <h3>Coding Camp Counselor</h3>
+            <p class="company">UCC Summer Camps • Toronto, ON</p>
+            <ul>
+              <li>Taught students ages 12–15 the fundamentals of Python through interactive lessons and projects</li>
+              <li>Designed and delivered week-long lesson plans to introduce core programming concepts</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item glass">
+          <div class="timeline-date">April 2022 – Aug 2025</div>
+          <div class="timeline-content">
+            <h3>Soccer Referee</h3>
+            <p class="company">Beach Community Soccer League • Toronto, ON</p>
+            <ul>
+              <li>Officiated soccer matches for children ages 10-12 enforcing game rules, player safety, and communication between teams and coaches</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+      <div class="bento-grid">
+        <div class="project-card featured glass">
+          <div class="project-header">
+            <h3>UWaterloo Concrete Canoe Programming Team</h3>
+            <span class="project-badge">Team Project</span>
+          </div>
+          <div class="project-date">Sept. 2025 – Present</div>
+          <p>
+            Developed Python scripts to model and test canoe stability and performance metrics. 
+            Built and maintained the team website using JavaScript, HTML, and CSS to showcase projects and data.
+            Collaborated with team members to integrate code solutions for engineering design and analysis.
+          </p>
+          <div class="tech-stack">
+            <span>Python</span>
+            <span>JavaScript</span>
+            <span>HTML</span>
+            <span>CSS</span>
+          </div>
+        </div>
+
+        <div class="project-card featured glass">
+          <div class="project-header">
+            <h3>Pathfinder Visualizer</h3>
+            <span class="project-badge">Interactive</span>
+          </div>
+          <div class="project-date">Sept. 2025 – Nov. 2025</div>
+          <p>
+            Developed a pathfinding visualizer with a Python backend and React/HTML/CSS/JS frontend. 
+            Added support for common algorithms including BFS, DFS, Dijkstra's, A*, and Greedy Best-First Search. 
+            Built a grid interface with animations and obstacle placement to visualize these algorithms.
+          </p>
+          <div class="tech-stack">
+            <span>Python</span>
+            <span>React</span>
+            <span>JavaScript</span>
+            <span>HTML/CSS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/anna-poutanen/pathfinder-visualizer" 
+               target="_blank" class="link-btn">
+              <span>Code</span> →
+            </a>
+            <a href="https://pathfinder-visualizer-production.up.railway.app/" 
+               target="_blank" class="link-btn primary">
+              <span>Live Demo</span> →
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card glass">
+          <div class="project-header">
+            <h3>Spotify Mood Analyzer</h3>
+            <span class="project-badge">API</span>
+          </div>
+          <p>
+            Connects to Spotify's API to analyze music taste by energy, valence, 
+            and organization. Visualize your listening mood patterns.
+          </p>
+          <div class="tech-stack">
+            <span>Python</span>
+            <span>Spotify API</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="link-btn disabled">
+              <span>Coming Soon</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card glass">
+          <div class="project-header">
+            <h3>MySQL Todo App</h3>
+            <span class="project-badge">Full-Stack</span>
+          </div>
+          <p>
+            Task management application with MySQL backend. Features CRUD operations, 
+            due dates, and priority levels.
+          </p>
+          <div class="tech-stack">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>MySQL</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="link-btn disabled">
+              <span>Coming Soon</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card accent glass">
+          <div class="project-header">
+            <h3>This Portfolio</h3>
+            <span class="project-badge">Design</span>
+          </div>
+          <p>
+            A modern, interactive portfolio built from scratch to showcase projects 
+            and experiments as a software engineering student.
+          </p>
+          <div class="tech-stack">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/anna-poutanen/anna-poutanen.github.io" 
+               target="_blank" class="link-btn">
+              <span>View Code</span> →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal-section">
+    <div class="container contact-container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Let's Connect</h2>
+      </div>
+      <div class="contact-content">
+        <p class="contact-intro">
+          I'm always open to connecting with other students, developers, or potential co-op mentors. 
+          Let's chat about projects, opportunities, or just tech in general!
+        </p>
+        <div class="contact-links">
+          <a href="mailto:a2poutan@uwaterloo.ca" class="contact-card glass">
+            <div class="contact-info">
+              <div class="contact-label">Email</div>
+              <div class="contact-value">a2poutan@uwaterloo.ca</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/annapoutanen" target="_blank" class="contact-card glass">
+            <div class="contact-info">
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">@annapoutanen</div>
+            </div>
+          </a>
+          <a href="https://github.com/anna-poutanen" target="_blank" class="contact-card glass">
+            <div class="contact-info">
+              <div class="contact-label">GitHub</div>
+              <div class="contact-value">@anna-poutanen</div>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer>
-    <div class="container">
-      <p>© 2025 Anna Poutanen</p>
+    <div class="container footer-content">
+      <p>Designed & Built by Anna Poutanen</p>
+      <p class="footer-year">© 2025</p>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
