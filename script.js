@@ -46,14 +46,16 @@ revealSections.forEach(section => {
   revealOnScroll.observe(section);
 });
 
-// ===== PARALLAX EFFECT ON HERO =====
+// ===== FADE HERO ON SCROLL =====
+const hero = document.getElementById('hero');
+
 window.addEventListener('scroll', () => {
   const scrolled = window.pageYOffset;
-  const hero = document.getElementById('hero');
   
   if (hero && scrolled < window.innerHeight) {
-    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.7;
+    // Fade out hero as you scroll
+    const opacity = 1 - (scrolled / window.innerHeight) * 1.5;
+    hero.style.opacity = Math.max(opacity, 0);
   }
 });
 
@@ -114,23 +116,6 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
-
-// ===== MOBILE MENU ENHANCEMENT =====
-if (window.innerWidth <= 600) {
-  const nav = document.querySelector('nav');
-  nav.style.cssText = `
-    position: fixed;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(10, 10, 15, 0.95);
-    backdrop-filter: blur(20px);
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  `;
-}
 
 // ===== PERFORMANCE: REDUCE MOTION FOR ACCESSIBILITY =====
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

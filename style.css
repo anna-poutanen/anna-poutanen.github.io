@@ -133,6 +133,7 @@ nav {
   position: relative;
   overflow: hidden;
   padding-top: 80px;
+  transition: opacity 0.3s ease;
 }
 
 .hero-bg {
@@ -154,12 +155,16 @@ nav {
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  justify-content: center;
   align-items: center;
   position: relative;
   z-index: 2;
+}
+
+.hero-text {
+  text-align: center;
+  max-width: 800px;
 }
 
 .hero-label {
@@ -211,13 +216,16 @@ nav {
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 2rem;
-  max-width: 500px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn {
@@ -251,49 +259,6 @@ nav {
 .btn-secondary:hover {
   background: var(--glass-border);
   transform: translateY(-2px);
-}
-
-/* Hero Decoration */
-.hero-decoration {
-  position: relative;
-  height: 400px;
-}
-
-.floating-card {
-  position: absolute;
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 20px;
-  animation: floatCard 6s ease-in-out infinite;
-}
-
-.floating-card .emoji {
-  font-size: 3rem;
-}
-
-.card-1 {
-  top: 10%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.card-2 {
-  top: 50%;
-  right: 20%;
-  animation-delay: 2s;
-}
-
-.card-3 {
-  bottom: 10%;
-  left: 30%;
-  animation-delay: 4s;
-}
-
-@keyframes floatCard {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
 }
 
 .scroll-indicator {
@@ -733,14 +698,6 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 968px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-  }
-  
-  .hero-decoration {
-    display: none;
-  }
-  
   .hero-title {
     font-size: 3rem;
   }
