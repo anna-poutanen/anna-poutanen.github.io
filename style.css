@@ -19,6 +19,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Keeps anchored sections from tucking under the fixed header */
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -27,6 +29,13 @@ body {
   background: var(--bg);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* ===== KEYBOARD FOCUS (accessibility) ===== */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 /* ===== CURSOR GLOW ===== */
@@ -72,6 +81,7 @@ header {
   font-weight: 700;
   display: flex;
   gap: 0.25rem;
+  text-decoration: none;
 }
 
 .logo-letter {
@@ -133,7 +143,8 @@ nav {
   position: relative;
   overflow: hidden;
   padding-top: 80px;
-  transition: opacity 0.3s ease;
+  /* NOTE: no opacity transition here — the scroll handler sets opacity every
+     frame, so a transition would lag behind the scroll and look janky. */
 }
 
 .hero-bg {
@@ -142,7 +153,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(ellipse at 20% 30%, rgba(99, 102, 241, 0.2), transparent 50%),
     radial-gradient(ellipse at 80% 70%, rgba(236, 72, 153, 0.2), transparent 50%),
     radial-gradient(ellipse at 50% 50%, rgba(20, 184, 166, 0.1), transparent 50%);
@@ -201,13 +212,13 @@ nav {
 }
 
 @keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
   from {
     opacity: 0;
     transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -317,44 +328,88 @@ section {
 }
 
 /* ===== ABOUT ===== */
-.about-content {
+.about-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: start;
 }
 
 .large-text {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.about-text p {
-  color: var(--text-secondary);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
   margin-bottom: 1.5rem;
 }
 
-.skills-container {
-  margin-top: 2rem;
+.about-intro p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  max-width: 46ch;
+}
+
+/* Quick-facts panel (replaces the old stat cards) */
+.about-facts {
+  border-radius: 16px;
+  padding: 0.4rem 2rem;
+}
+
+.fact-row {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 1.5rem;
+  padding: 1.3rem 0;
+  align-items: baseline;
+}
+
+.fact-row + .fact-row {
+  border-top: 1px solid var(--glass-border);
+}
+
+.fact-key {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  padding-top: 0.15rem;
+}
+
+.fact-val {
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.fact-muted {
+  color: var(--text-secondary);
+}
+
+/* Skills — full width, two columns below the intro */
+.about-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--glass-border);
 }
 
 .skills-title {
-  font-size: 1rem;
-  color: var(--text);
-  margin-bottom: 0.75rem;
-  margin-top: 1.5rem;
+  font-size: 0.72rem;
   font-weight: 600;
-}
-
-.skills-title:first-of-type {
-  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
 }
 
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.6rem;
 }
 
 .skill-tag {
@@ -372,36 +427,6 @@ section {
   background: var(--primary);
   border-color: var(--primary);
   transform: translateY(-2px);
-}
-
-.about-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.stat-card {
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem;
-  border-radius: 16px;
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.stat-label {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
 }
 
 /* ===== EXPERIENCE TIMELINE ===== */
@@ -515,10 +540,6 @@ section {
   grid-row: span 2;
 }
 
-.project-card.accent {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
-}
-
 .project-card:hover {
   transform: translateY(-8px);
   border-color: var(--primary);
@@ -598,22 +619,11 @@ section {
   gap: 0.5rem;
 }
 
-.link-btn.primary {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
-}
-
-.link-btn:hover:not(.disabled) {
+.link-btn:hover {
   transform: translateX(4px);
   background: var(--primary);
   border-color: var(--primary);
   color: white;
-}
-
-.link-btn.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
 }
 
 /* ===== CONTACT ===== */
@@ -701,15 +711,22 @@ footer {
   .hero-title {
     font-size: 3rem;
   }
-  
-  .about-content {
+
+  .about-grid {
     grid-template-columns: 1fr;
   }
-  
+
+  .about-skills {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+  }
+
   .bento-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .project-card.featured {
     grid-row: span 1;
   }
@@ -727,16 +744,16 @@ footer {
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .nav {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   nav {
     gap: 1rem;
   }
@@ -752,4 +769,29 @@ footer {
   .contact-links {
     grid-template-columns: 1fr;
   }
+
+  .fact-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .about-facts {
+    padding: 0.25rem 1.25rem;
+  }
+}
+
+/* ===== REDUCED MOTION (moved out of JS) ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Elements that start hidden and rely on animation to appear: force visible */
+  .hero-title .line { opacity: 1; }
+  .reveal-section { opacity: 1; transform: none; }
 }
