@@ -1,123 +1,90 @@
-// ===== REDUCED MOTION =====
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* Tiny client-side router.
+   Every page lives in the DOM as a <section data-route="..."> and we just
+   show one at a time — no fetching, no framework. */
 
-// ===== CURSOR GLOW EFFECT =====
-const cursorGlow = document.querySelector('.cursor-glow');
-if (cursorGlow && !prefersReducedMotion) {
-  let mouseX = 0, mouseY = 0;
+// history.pushState needs a real origin, so fall back to hashes on file://
+const useHash = location.protocol === 'file:';
 
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  }, { passive: true });
+const sections = document.querySelectorAll('main section[data-route]');
+const tabs = document.querySelectorAll('.tabs a');
 
-  function animateCursor() {
-    cursorGlow.style.left = mouseX + 'px';
-    cursorGlow.style.top = mouseY + 'px';
-    cursorGlow.style.opacity = '1';
-    requestAnimationFrame(animateCursor);
-  }
-  animateCursor();
+const TITLES = {
+  '/': 'Anna Poutanen',
+  '/experience': 'Experience — Anna Poutanen',
+  '/projects': 'Projects — Anna Poutanen',
+  '/education': 'Education — Anna Poutanen',
+  '/contact': 'Contact — Anna Poutanen',
+  '404': 'Not found — Anna Poutanen',
+};
+
+function normalize(path) {
+  path = (path || '/').split('?')[0].replace(/index\.html$/, '');
+  if (path.length > 1) path = path.replace(/\/+$/, '');
+  return path.toLowerCase() || '/';
 }
 
-// ===== SMOOTH SCROLL =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const href = this.getAttribute('href');
-    if (!href || href === '#') return; // ignore bare "#" links
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+function currentPath() {
+  return normalize(useHash ? location.hash.slice(1) : location.pathname);
+}
+
+function render() {
+  const path = currentPath();
+  const known = [...sections].some((s) => s.dataset.route === path);
+  const route = known ? path : '404';
+
+  sections.forEach((s) => {
+    s.hidden = s.dataset.route !== route;
   });
+
+  tabs.forEach((a) => {
+    const href = normalize(a.getAttribute('href'));
+    if (href === route) a.setAttribute('aria-current', 'page');
+    else a.removeAttribute('aria-current');
+  });
+
+  document.title = TITLES[route] || TITLES['404'];
+}
+
+function navigate(path) {
+  if (normalize(path) === currentPath()) return;
+  if (useHash) {
+    location.hash = path; // fires hashchange, which re-renders
+  } else {
+    history.pushState({}, '', path);
+    render();
+  }
+  window.scrollTo(0, 0);
+}
+
+// Intercept same-site links; leave mailto, external, and new-tab clicks alone.
+document.addEventListener('click', (e) => {
+  if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+  const link = e.target.closest('a');
+  if (!link || link.target === '_blank') return;
+
+  const href = link.getAttribute('href');
+  if (!href || !href.startsWith('/')) return;
+
+  e.preventDefault();
+  navigate(href);
 });
 
-// ===== SCROLL REVEAL ANIMATION (reveal once, then stop observing) =====
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
+window.addEventListener('popstate', render);
+window.addEventListener('hashchange', render);
 
-document.querySelectorAll('.reveal-section').forEach(section => {
-  revealObserver.observe(section);
-});
-
-// ===== CONSOLIDATED SCROLL HANDLER (header bg + hero fade), rAF-throttled =====
-const hero = document.getElementById('hero');
-const header = document.querySelector('header');
-let ticking = false;
-
-function handleScroll() {
-  const scrolled = window.pageYOffset;
-
-  // Header background
-  if (header) {
-    if (scrolled > 50) {
-      header.style.background = 'rgba(10, 10, 15, 0.95)';
-      header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-    } else {
-      header.style.background = 'rgba(10, 10, 15, 0.8)';
-      header.style.boxShadow = 'none';
-    }
-  }
-
-  // Fade hero as you scroll past it
-  if (hero && !prefersReducedMotion && scrolled < window.innerHeight) {
-    const opacity = 1 - (scrolled / window.innerHeight) * 1.5;
-    hero.style.opacity = Math.max(opacity, 0);
-  }
-
-  ticking = false;
-}
-
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    requestAnimationFrame(handleScroll);
-    ticking = true;
-  }
-}, { passive: true });
-
-// ===== PROJECT CARD TILT =====
-if (!prefersReducedMotion) {
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const rotateX = (y - rect.height / 2) / 20;
-      const rotateY = (rect.width / 2 - x) / 20;
-      card.style.transform =
-        `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-    });
+// On file:// the tab hrefs have to become hashes so they still work without JS.
+if (useHash) {
+  document.querySelectorAll('a[href^="/"]').forEach((a) => {
+    a.setAttribute('href', '#' + a.getAttribute('href'));
   });
 }
 
-// ===== SKILL TAG ENTRANCE ANIMATION =====
-if (!prefersReducedMotion) {
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  `;
-  document.head.appendChild(style);
-
-  document.querySelectorAll('.skill-tag').forEach((tag, index) => {
-    tag.style.animationDelay = `${index * 0.05}s`;
-    tag.style.animation = 'fadeInUp 0.6s forwards';
-  });
+// A deep link on GitHub Pages lands on 404.html, which stashes the path here.
+const stashed = sessionStorage.getItem('route');
+if (stashed) {
+  sessionStorage.removeItem('route');
+  if (!useHash) history.replaceState({}, '', stashed);
 }
 
-// ===== DYNAMIC FOOTER YEAR =====
-const yearEl = document.getElementById('year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+render();

@@ -3,435 +3,220 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anna Poutanen | Software Engineering Student</title>
+  <title>Anna Poutanen</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Anna Poutanen — University of Waterloo Software Engineering student focused on full-stack development, data analysis, and applied machine learning. Currently seeking a co-op position." />
+  <meta name="description" content="Anna Poutanen — Software Engineering at the University of Waterloo. Forward Deployed Engineer building AI and data tools." />
   <meta name="author" content="Anna Poutanen" />
-  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="theme-color" content="#0e0e0e" />
   <link rel="canonical" href="https://anna-poutanen.github.io/" />
 
-  <!-- Open Graph — controls how the link looks when shared on LinkedIn / iMessage / Slack -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Anna Poutanen | Software Engineering Student" />
-  <meta property="og:description" content="UWaterloo Software Engineering student — full-stack, data analysis, and applied ML. Seeking a co-op position." />
+  <meta property="og:title" content="Anna Poutanen" />
+  <meta property="og:description" content="Software Engineering at the University of Waterloo. Building AI and data tools." />
   <meta property="og:url" content="https://anna-poutanen.github.io/" />
-
-  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Anna Poutanen | Software Engineering Student" />
-  <meta name="twitter:description" content="UWaterloo Software Engineering student — full-stack, data analysis, and applied ML. Seeking a co-op position." />
+  <meta name="twitter:title" content="Anna Poutanen" />
+  <meta name="twitter:description" content="Software Engineering at the University of Waterloo. Building AI and data tools." />
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/favicon.png" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230e0e0e'/><text x='16' y='23' text-anchor='middle' fill='%23e6e6e6' font-family='Helvetica,Arial,sans-serif' font-size='21' font-weight='600'>A</text></svg>" />
 </head>
 
 <body>
-  <div class="cursor-glow"></div>
-
   <header>
-    <div class="container nav">
-      <a href="#hero" class="logo" aria-label="Anna Poutanen — back to top">
-        <span class="logo-letter">A</span>
-        <span class="logo-letter">P</span>
-      </a>
-      <nav>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
-    </div>
+    <!-- To add a photo: <img class="photo" src="images/anna.jpg" alt="Anna Poutanen" /> -->
+    <h1><a href="/">Anna Poutanen</a></h1>
+    <p class="sub">Software Engineering at the University of Waterloo</p>
+
+    <nav class="tabs">
+      <a href="/">Home</a>
+      <a href="/experience">Experience</a>
+      <a href="/projects">Projects</a>
+      <a href="/education">Education</a>
+      <a href="/contact">Contact</a>
+    </nav>
   </header>
 
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-content">
-      <div class="hero-text">
-        <p class="hero-label">Software Engineering Student</p>
-        <h1 class="hero-title">
-          <span class="line">Hi, I'm</span>
-          <span class="line highlight">Anna Poutanen</span>
-        </h1>
-        <p class="hero-description">
-          Second-year University of Waterloo Software Engineering student interested in full-stack development, data analysis, and applied machine learning. Currently completing a summer co-op and seeking a Winter 2027 co-op position.
+  <main>
+    <!-- ============================= HOME ============================= -->
+    <section data-route="/">
+      <p>
+        Currently a Forward Deployed Engineer at Ascendance Foundry in Toronto, building AI
+        and data tooling that replaces manual review. I&rsquo;m interested in applied machine
+        learning, full-stack work, and systems that hold up in production. Looking for a
+        Winter 2027 co-op.
+      </p>
+      <p class="row">
+        <a href="mailto:a2poutan@uwaterloo.ca">Email</a>
+        <a href="https://github.com/anna-poutanen" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/annapoutanen" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+
+      <h2>Skills</h2>
+      <ul class="plain">
+        <li><b>Languages</b> &mdash; Python, C, C++, Java, TypeScript, JavaScript, HTML/CSS, SQL, Verilog</li>
+        <li><b>Frameworks</b> &mdash; React, Node.js, Flask, TensorFlow, pandas, NumPy, Matplotlib, pytest</li>
+        <li><b>Tools</b> &mdash; Git, Docker, Linux, PostgreSQL, REST APIs, LaTeX</li>
+      </ul>
+    </section>
+
+    <!-- ========================== EXPERIENCE ========================== -->
+    <section data-route="/experience" hidden>
+      <h2>Experience</h2>
+
+      <article>
+        <h3>Forward Deployed Engineer <span class="at">&mdash; Ascendance Foundry</span></h3>
+        <p class="when">May 2026 &ndash; Aug. 2026 &middot; Toronto, ON</p>
+        <ul>
+          <li>Designed a recall-first PII-responsiveness classifier in Python for breach-notification review that triaged 208K documents, achieving 97% recall and a 1.95% missed-clearance rate.</li>
+          <li>Cut first-pass manual review by about 47% and standardized the tool for reuse across similar breach-review projects.</li>
+          <li>Shipped an end-to-end AI prospecting tool in Python &mdash; firm analysis, contact sourcing, personalized outreach, automated sending, CRM logging &mdash; that matched the vendor tool it replaced at one eightieth of the cost.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Data Analyst <span class="at">&mdash; Mount Sinai Hospital</span></h3>
+        <p class="when">Feb. 2025 &ndash; June 2025 &middot; Toronto, ON</p>
+        <ul>
+          <li>Created a pilot quality-control dataset encoding 429 validation rules to confirm rule behaviour before running against production lab tables of hundreds of thousands of entries; the pilot caught 94.8% of the errors found in the full dataset.</li>
+          <li>Automated sorting and analysis of lab data by type against the same rule set in Python (pandas, NumPy, Git), replacing manual spot-checks.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Math Tutor <span class="at">&mdash; Kumon Tutoring Center</span></h3>
+        <p class="when">May 2025 &ndash; Aug. 2025 &middot; Toronto, ON</p>
+        <ul>
+          <li>Tracked student progress, delivered individual feedback, and supported daily class operations.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Coding Camp Counselor <span class="at">&mdash; UCC Summer Camps</span></h3>
+        <p class="when">June 2023 &ndash; Aug. 2023 &middot; Toronto, ON</p>
+        <ul>
+          <li>Taught Python fundamentals to students ages 12&ndash;15 through week-long lesson plans and interactive projects.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Coaching &amp; Officiating</h3>
+        <p class="when">2022 &ndash; 2025 &middot; Ontario</p>
+        <ul>
+          <li>Assistant Volleyball Coach, Titans Volleyball Association (2025).</li>
+          <li>Soccer Referee, Beach Community Soccer League (2022&ndash;2025).</li>
+          <li>Volleyball Camp Counselor, Camp Madawaska (2024).</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- =========================== PROJECTS =========================== -->
+    <section data-route="/projects" hidden>
+      <h2>Projects</h2>
+
+      <article>
+        <h3>AI-Powered Music Recommendation System</h3>
+        <p class="when">Jan. 2026 &ndash; Mar. 2026 &middot; Python, TensorFlow, NumPy, pandas</p>
+        <p>
+          Infers emotion from facial expressions (FER-2013) and recommends mood-aligned tracks
+          through the Spotify Web API. I trained and fine-tuned a CNN using augmentation and
+          transfer learning to 67.3% accuracy on the held-out test split, running inference on
+          live webcam input.
         </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">Explore Projects</a>
-          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
+        <p><a href="https://github.com/anna-poutanen/ai-music-recommendation" target="_blank" rel="noopener noreferrer">Code</a></p>
+      </article>
 
-  <section id="about" class="reveal-section">
-    <div class="container about-container">
-      <div class="about-grid">
-        <div class="about-main">
-          <div class="section-header">
-            <span class="section-number">01</span>
-            <h2 class="section-title">About Me</h2>
-          </div>
-          <div class="about-intro">
-            <p class="large-text">
-              I'm a Software Engineering student at the University of Waterloo, currently completing a summer co-op and heading into my 2A term.
-            </p>
-            <p>
-              I work across full-stack web development, data analysis, and machine learning, with a solid foundation in Python, TypeScript, C/C++, and JavaScript. I'm happiest turning real-world data into tools people can actually use.
-            </p>
-          </div>
-        </div>
-
-        <aside class="about-facts glass" aria-label="Quick facts">
-          <div class="fact-row">
-            <span class="fact-key">Program</span>
-            <span class="fact-val">Software Engineering, University of Waterloo <span class="fact-muted">2025–2030</span></span>
-          </div>
-          <div class="fact-row">
-            <span class="fact-key">Standing</span>
-            <span class="fact-val">2A — entering Fall 2026</span>
-          </div>
-          <div class="fact-row">
-            <span class="fact-key">Currently</span>
-            <span class="fact-val">Forward Deployed Engineer co-op at Ascendance Foundry</span>
-          </div>
-          <div class="fact-row">
-            <span class="fact-key">Based in</span>
-            <span class="fact-val">Toronto, ON</span>
-          </div>
-          <div class="fact-row">
-            <span class="fact-key">Available</span>
-            <span class="fact-val">Winter 2027 co-op</span>
-          </div>
-        </aside>
-      </div>
-
-      <div class="about-skills">
-        <div class="skill-group">
-          <h3 class="skills-title">Languages</h3>
-          <div class="skills-grid">
-            <div class="skill-tag">Java</div>
-            <div class="skill-tag">Python</div>
-            <div class="skill-tag">C</div>
-            <div class="skill-tag">C++</div>
-            <div class="skill-tag">JavaScript</div>
-            <div class="skill-tag">HTML/CSS</div>
-            <div class="skill-tag">SQL</div>
-            <div class="skill-tag">TypeScript</div>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3 class="skills-title">Tools &amp; Libraries</h3>
-          <div class="skills-grid">
-            <div class="skill-tag">Git</div>
-            <div class="skill-tag">pandas</div>
-            <div class="skill-tag">NumPy</div>
-            <div class="skill-tag">Matplotlib</div>
-            <div class="skill-tag">React</div>
-            <div class="skill-tag">Flask</div>
-            <div class="skill-tag">Node.js</div>
-            <div class="skill-tag">Excel</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="reveal-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-number">02</span>
-        <h2 class="section-title">Experience</h2>
-      </div>
-      <!-- Ordered reverse-chronologically, most recent first. -->
-      <div class="timeline">
-        <div class="timeline-item glass">
-          <!-- TODO: confirm your co-op start month / end date -->
-          <div class="timeline-date">May 2026 – Present</div>
-          <div class="timeline-content">
-            <h3>Forward Deployed Engineer</h3>
-            <p class="company">Ascendance Foundry • Toronto, ON</p>
-            <ul>
-              <li>Built a recall-first PII-responsiveness classifier for breach-notification review that triaged 208K documents, achieving 95.5% recall and a 1.95% missed-clearance rate</li>
-              <li>Cut first-pass manual review by ~47% and standardized the tool for reuse across future breach-review projects of similar scope</li>
-              <li>Built an end-to-end AI prospecting and outreach tool — firm identification and analysis, contact sourcing, personalized email generation, automated sending, and CRM logging — aligned to each client's ideal client profile, delivered for Ascendance Foundry and one of its consulting clients</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item glass">
-          <div class="timeline-date">Feb 2025 – June 2025</div>
-          <div class="timeline-content">
-            <h3>Data Analyst Volunteer</h3>
-            <p class="company">Mount Sinai Hospital • Toronto, ON</p>
-            <ul>
-              <li>Collaborated with a team to develop a Python algorithm for organizing, sorting, and analyzing lab data</li>
-              <li>Utilized pandas and NumPy Python libraries to improve data handling efficiency and accuracy</li>
-              <li>Managed code development using Git for version control</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item glass">
-          <div class="timeline-date">May 2025 – Aug 2025</div>
-          <div class="timeline-content">
-            <h3>Math Tutor</h3>
-            <p class="company">Kumon Tutoring Center • Toronto, ON</p>
-            <ul>
-              <li>Tutored students grades K-6 in math, reinforcing foundational concepts and problem-solving skills</li>
-              <li>Tracked progress and gave feedback to improve accuracy, speed, and confidence</li>
-              <li>Supported a positive learning environment and assisted with class operations</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item glass">
-          <div class="timeline-date">April 2022 – Aug 2025</div>
-          <div class="timeline-content">
-            <h3>Soccer Referee</h3>
-            <p class="company">Beach Community Soccer League • Toronto, ON</p>
-            <ul>
-              <li>Officiated soccer matches for children ages 10-12 enforcing game rules, player safety, and communication between teams and coaches</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item glass">
-          <div class="timeline-date">March 2025 – July 2025</div>
-          <div class="timeline-content">
-            <h3>Assistant Volleyball Coach</h3>
-            <p class="company">Titans Volleyball Association • Toronto, ON</p>
-            <ul>
-              <li>Coached players ages 12-14 through leading drills, officiating gameplay, and providing individualized instruction</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item glass">
-          <div class="timeline-date">Aug 2024 – Sept 2024</div>
-          <div class="timeline-content">
-            <h3>Volleyball Camp Counselor and Assistant Coach</h3>
-            <p class="company">Camp Madawaska • Bancroft, ON</p>
-            <ul>
-              <li>Served as an overnight counselor, supervising a cabin of 14 campers ages 14-15</li>
-              <li>Assisted as a volleyball coach by teaching fundamental skills, designing drills, and ensuring sportsmanship</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item glass">
-          <div class="timeline-date">June 2023 – Aug 2023</div>
-          <div class="timeline-content">
-            <h3>Coding Camp Counselor</h3>
-            <p class="company">UCC Summer Camps • Toronto, ON</p>
-            <ul>
-              <li>Taught students ages 12–15 the fundamentals of Python through interactive lessons and projects</li>
-              <li>Designed and delivered week-long lesson plans to introduce core programming concepts</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="reveal-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-number">03</span>
-        <h2 class="section-title">Featured Projects</h2>
-      </div>
-      <div class="bento-grid">
-
-        <div class="project-card glass">
-          <div class="project-header">
-            <h3>Electriumap</h3>
-            <span class="project-badge">Team Project</span>
-          </div>
-          <div class="project-date">Jan. 2026 – Present</div>
-          <p>
-            Developed a crowdsourced React web app to help riders locate EV charging stations. Implemented Firebase backend for geolocation uploads, image storage, CSV imports, and a multi-step form UI.
-          </p>
-          <div class="tech-stack">
-            <span>TypeScript</span>
-            <span>React</span>
-            <span>Firebase</span>
-            <span>Mapbox</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/anna-poutanen/electriumap"
-               target="_blank" rel="noopener noreferrer" class="link-btn">
-              <span>Code</span> →
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card glass">
-          <div class="project-header">
-            <h3>AI Music Recommender System</h3>
-            <span class="project-badge">API, AI</span>
-          </div>
-          <div class="project-date">Jan. 2026 – Mar. 2026</div>
-          <p>
-            AI-powered music recommendation system that infers user emotion from facial expressions (FER‑2013) and delivers mood-aligned tracks via the Spotify Web API.
-          </p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>Spotify API</span>
-            <span>TensorFlow</span>
-            <span>NumPy</span>
-            <span>pandas</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/anna-poutanen/ai-music-recommendation"
-               target="_blank" rel="noopener noreferrer" class="link-btn">
-              <span>Code</span> →
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card featured glass">
-          <div class="project-header">
-            <h3>UWaterloo Concrete Canoe Programming Team</h3>
-            <span class="project-badge">Team Project</span>
-          </div>
-          <div class="project-date">Sept. 2025 – Present</div>
-          <p>
-            Developed Python scripts to model and test canoe stability and performance metrics.
-            Built and maintained the team website using JavaScript, HTML, and CSS to showcase projects and data.
-            Collaborated with team members to integrate code solutions for engineering design and analysis.
-          </p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>Jupyter Notebook</span>
-            <span>TypeScript</span>
-            <span>JavaScript</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/anna-poutanen/concrete_canoe_structural_analysis"
-               target="_blank" rel="noopener noreferrer" class="link-btn">
-              <span>Code</span> →
-            </a>
-            <a href="https://waterlooconcretecanoe.ca/"
-               target="_blank" rel="noopener noreferrer" class="link-btn">
-              <span>Website</span> →
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card featured glass">
-          <div class="project-header">
-            <h3>Pathfinder Visualizer</h3>
-            <span class="project-badge">Interactive</span>
-          </div>
-          <div class="project-date">Sept. 2025 – Nov. 2025</div>
-          <p>
-            Developed a pathfinding visualizer with a Python backend and React/HTML/CSS/JS frontend.
-            Added support for common algorithms including BFS, DFS, Dijkstra's, A*, and Greedy Best-First Search.
-            Built a grid interface with animations and obstacle placement to visualize these algorithms.
-          </p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>React</span>
-            <span>JavaScript</span>
-            <span>HTML/CSS</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/anna-poutanen/pathfinder-visualizer"
-               target="_blank" rel="noopener noreferrer" class="link-btn">
-              <span>Code</span> →
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card glass">
-          <div class="project-header">
-            <h3>Chess Opening Trainer</h3>
-            <span class="project-badge">Interactive</span>
-          </div>
-          <p>
-            Interactive CLI chess opening trainer with a visual board: define openings in JSON, get move validation, and practice against weighted random responses.
-          </p>
-          <div class="tech-stack">
-            <span>Python</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/anna-poutanen/chess-opening-trainer"
-               target="_blank" rel="noopener noreferrer" class="link-btn">
-              <span>Code</span> →
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card glass">
-          <div class="project-header">
-            <h3>To-Do App</h3>
-            <span class="project-badge">Full Stack</span>
-          </div>
-          <p>
-            Full-featured todo application with Flask REST API, MySQL database, and responsive web interface. Includes task prioritization, category filtering, search, and date-based views. Comprehensive test suite with 100% pass rate and 87% coverage.
-          </p>
-          <div class="tech-stack">
-            <span>SQL</span>
-            <span>Python</span>
-            <span>JavaScript</span>
-            <span>HTML/CSS</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/anna-poutanen/todo-app"
-               target="_blank" rel="noopener noreferrer" class="link-btn">
-              <span>Code</span> →
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="reveal-section">
-    <div class="container contact-container">
-      <div class="section-header">
-        <span class="section-number">04</span>
-        <h2 class="section-title">Let's Connect</h2>
-      </div>
-      <div class="contact-content">
-        <p class="contact-intro">
-          I'm always open to connecting with other students, developers, or potential co-op mentors. Feel free to reach out!
+      <article>
+        <h3>Electriumap <span class="at">&mdash; Electrium Mobility</span></h3>
+        <p class="when">Dec. 2025 &ndash; Present &middot; TypeScript, React, Firebase, Mapbox</p>
+        <p>
+          A crowdsourced web app that helps riders find EV charging stations, now mapping
+          2,000+ stations for 75 active users. I maintain the Firebase backend handling
+          geolocation uploads, image storage, CSV imports, and a multi-step form.
         </p>
-        <div class="contact-links">
-          <a href="mailto:a2poutan@uwaterloo.ca" class="contact-card glass">
-            <div class="contact-info">
-              <div class="contact-label">Email</div>
-              <div class="contact-value">a2poutan@uwaterloo.ca</div>
-            </div>
-          </a>
-          <a href="https://linkedin.com/in/annapoutanen" target="_blank" rel="noopener noreferrer" class="contact-card glass">
-            <div class="contact-info">
-              <div class="contact-label">LinkedIn</div>
-              <div class="contact-value">@annapoutanen</div>
-            </div>
-          </a>
-          <a href="https://github.com/anna-poutanen" target="_blank" rel="noopener noreferrer" class="contact-card glass">
-            <div class="contact-info">
-              <div class="contact-label">GitHub</div>
-              <div class="contact-value">@anna-poutanen</div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+        <p><a href="https://github.com/anna-poutanen/electriumap" target="_blank" rel="noopener noreferrer">Code</a></p>
+      </article>
 
-  <footer>
-    <div class="container footer-content">
-      <p>Designed &amp; Built by Anna Poutanen</p>
-      <p class="footer-year">© <span id="year"></span></p>
-    </div>
-  </footer>
+      <article>
+        <h3>Concrete Canoe Programming Team <span class="at">&mdash; UWaterloo</span></h3>
+        <p class="when">Sept. 2025 &ndash; Present &middot; Python, Jupyter, TypeScript</p>
+        <p>
+          Reproducible structural analysis pipelines that model canoe stability and performance.
+          I also maintain the team website and tooling, and integrate analysis output into the
+          GitHub workflow.
+        </p>
+        <p>
+          <a href="https://github.com/anna-poutanen/concrete_canoe_structural_analysis" target="_blank" rel="noopener noreferrer">Code</a> &middot;
+          <a href="https://waterlooconcretecanoe.ca/" target="_blank" rel="noopener noreferrer">Team site</a>
+        </p>
+      </article>
+
+      <article>
+        <h3>Pathfinder Visualizer</h3>
+        <p class="when">Sept. 2025 &ndash; Nov. 2025 &middot; Python, React, JavaScript</p>
+        <p>
+          An interactive visualizer for shortest-path algorithms &mdash; BFS, DFS, Dijkstra&rsquo;s,
+          A*, and Greedy Best-First &mdash; on a grid you can draw obstacles onto and watch the
+          search run.
+        </p>
+        <p><a href="https://github.com/anna-poutanen/pathfinder-visualizer" target="_blank" rel="noopener noreferrer">Code</a></p>
+      </article>
+
+      <article>
+        <h3>Chess Opening Trainer</h3>
+        <p class="when">2025 &middot; Python</p>
+        <p>
+          A command-line opening trainer with a visual board. Openings are defined in JSON,
+          moves are validated as you play, and the engine answers with weighted random
+          responses.
+        </p>
+        <p><a href="https://github.com/anna-poutanen/chess-opening-trainer" target="_blank" rel="noopener noreferrer">Code</a></p>
+      </article>
+
+      <article>
+        <h3>To-Do App</h3>
+        <p class="when">2025 &middot; Python, Flask, SQL, JavaScript</p>
+        <p>
+          A full-stack task manager with a Flask REST API and MySQL storage &mdash; prioritization,
+          category filtering, search, and date-based views, with 87% test coverage.
+        </p>
+        <p><a href="https://github.com/anna-poutanen/todo-app" target="_blank" rel="noopener noreferrer">Code</a></p>
+      </article>
+    </section>
+
+    <!-- ========================== EDUCATION =========================== -->
+    <section data-route="/education" hidden>
+      <h2>Education</h2>
+
+      <article>
+        <h3>University of Waterloo</h3>
+        <p class="when">Sept. 2025 &ndash; Present &middot; Waterloo, ON</p>
+        <ul>
+          <li>Bachelor of Software Engineering, cumulative average 87%.</li>
+          <li>Varsity Nordic Skiing Team member.</li>
+          <li>Athletics Class Representative, Software Engineering 2030.</li>
+          <li>Alumni Women in Technology Scholarship ($6,000), President&rsquo;s Scholarship of Distinction ($2,000), and a UW Athletic Financial Award ($500).</li>
+          <li>Coursework: Software Engineering Methods (Python), Data Abstraction (C++), Programming Principles (C), Sequential Programs, Logic and Computation, Calculus 1&ndash;3.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- =========================== CONTACT ============================ -->
+    <section data-route="/contact" hidden>
+      <h2>Contact</h2>
+      <ul class="plain">
+        <li><a href="mailto:a2poutan@uwaterloo.ca">a2poutan@uwaterloo.ca</a></li>
+        <li><a href="https://linkedin.com/in/annapoutanen" target="_blank" rel="noopener noreferrer">linkedin.com/in/annapoutanen</a></li>
+        <li><a href="https://github.com/anna-poutanen" target="_blank" rel="noopener noreferrer">github.com/anna-poutanen</a></li>
+      </ul>
+    </section>
+
+    <!-- ========================== NOT FOUND =========================== -->
+    <section data-route="404" hidden>
+      <h2>Not found</h2>
+      <p>That page doesn&rsquo;t exist. <a href="/">Back home</a>.</p>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anna Poutanen</title>
+  <!-- GitHub Pages serves this for any unknown path. Hand the path to the
+       app and load the real page, so /projects works as a direct link. -->
+  <script>
+    sessionStorage.setItem('route', location.pathname + location.search);
+    location.replace('/');
+  </script>
+</head>
+<body></body>
+</html>
