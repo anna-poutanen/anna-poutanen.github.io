@@ -112,6 +112,18 @@ a:hover { text-decoration: underline; }
   border-bottom-color: var(--text);
 }
 
+footer {
+  margin-top: 4.5rem;
+  font-size: 0.85rem;
+}
+
+footer a { color: var(--muted); }
+
+footer a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
 .photo {
   width: 8rem;
   height: 8rem;
