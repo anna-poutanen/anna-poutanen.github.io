@@ -115,6 +115,32 @@
       <h2>Projects</h2>
 
       <article>
+        <h3>PostHog <span class="at">&mdash; Open Source</span></h3>
+        <p class="when">Oct. 2026 &middot; TypeScript, OpenTelemetry</p>
+        <p>
+          Authored a patch restoring missing Pydantic AI tool arguments and results in
+          PostHog&rsquo;s AI observability, preserving compatibility with legacy OpenTelemetry
+          attributes. I added regression coverage for structured payloads, scalar results,
+          and attribute precedence, and validated the patch through Kafka ingestion,
+          ClickHouse persistence, and Playwright checks of the Conversation view.
+        </p>
+        <p><a href="https://github.com/PostHog/posthog/pull/114989" target="_blank" rel="noopener noreferrer">Draft PR #114989</a></p>
+      </article>
+
+      <article>
+        <h3>PgDog <span class="at">&mdash; Open Source</span></h3>
+        <p class="when">Oct. 2026 &middot; Rust, PostgreSQL</p>
+        <ul>
+          <li>Authored a Rust parser fix restoring PostgreSQL-compatible handling of <code>SET LOCAL &hellip; DEFAULT</code>, preventing unintended session timeout resets; added regression tests for simple and extended query protocols.</li>
+          <li>Proposed a query-rewrite fix preserving client parameter types and bindings in prepared <code>EXPLAIN</code> queries; added unit and integration coverage across single-database and sharded endpoints.</li>
+        </ul>
+        <p>
+          <a href="https://github.com/pgdogdev/pgdog/pull/1778" target="_blank" rel="noopener noreferrer">Open PR #1778</a> &middot;
+          <a href="https://github.com/pgdogdev/pgdog/issues/1771" target="_blank" rel="noopener noreferrer">EXPLAIN issue &amp; patch #1771</a>
+        </p>
+      </article>
+
+      <article>
         <h3>AI-Powered Music Recommendation System</h3>
         <p class="when">Jan. 2026 &ndash; Mar. 2026 &middot; Python, TensorFlow, NumPy, pandas</p>
         <p>
