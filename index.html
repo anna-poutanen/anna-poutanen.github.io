@@ -124,6 +124,19 @@
       <h2>Projects</h2>
 
       <article>
+        <h3>PgDog <span class="at">&mdash; Open Source</span></h3>
+        <p class="when">Oct. 2026 &middot; Rust, PostgreSQL</p>
+        <ul>
+          <li>Authored a Rust parser fix restoring PostgreSQL-compatible handling of <code>SET LOCAL &hellip; DEFAULT</code>, preventing unintended session timeout resets; added regression tests for simple and extended query protocols.</li>
+          <li>Proposed a query-rewrite fix preserving client parameter types and bindings in prepared <code>EXPLAIN</code> queries; added unit and integration coverage across single-database and sharded endpoints.</li>
+        </ul>
+        <p>
+          <a href="https://github.com/pgdogdev/pgdog/pull/1778" target="_blank" rel="noopener noreferrer">Merged PR #1778</a> &middot;
+          <a href="https://github.com/pgdogdev/pgdog/issues/1771" target="_blank" rel="noopener noreferrer">EXPLAIN issue &amp; patch #1771</a>
+        </p>
+      </article>
+
+      <article>
         <h3>PostHog <span class="at">&mdash; Open Source</span></h3>
         <p class="when">Oct. 2026 &middot; TypeScript, OpenTelemetry</p>
         <p>
@@ -137,16 +150,13 @@
       </article>
 
       <article>
-        <h3>PgDog <span class="at">&mdash; Open Source</span></h3>
-        <p class="when">Oct. 2026 &middot; Rust, PostgreSQL</p>
+        <h3>Semantic Search Engine</h3>
+        <p class="when">Oct. 2026 &ndash; Present &middot; Python, MLX, SQLite</p>
         <ul>
-          <li>Authored a Rust parser fix restoring PostgreSQL-compatible handling of <code>SET LOCAL &hellip; DEFAULT</code>, preventing unintended session timeout resets; added regression tests for simple and extended query protocols.</li>
-          <li>Proposed a query-rewrite fix preserving client parameter types and bindings in prepared <code>EXPLAIN</code> queries; added unit and integration coverage across single-database and sharded endpoints.</li>
+          <li>Built a local code-search service with Qwen embeddings and H2O reranking; exposed a CLI/HTTP API and incremental SQLite index that reuses embeddings across edits, restarts, and branch switches.</li>
+          <li>Benchmarked 20 frozen Requests queries: dense search ran at 89 ms median HTTP latency; hybrid H2O reranking placed 16/16 targets first, versus 10/16 for BM25.</li>
         </ul>
-        <p>
-          <a href="https://github.com/pgdogdev/pgdog/pull/1778" target="_blank" rel="noopener noreferrer">Merged PR #1778</a> &middot;
-          <a href="https://github.com/pgdogdev/pgdog/issues/1771" target="_blank" rel="noopener noreferrer">EXPLAIN issue &amp; patch #1771</a>
-        </p>
+        <p><a href="https://github.com/anna-poutanen/semantic-search-engine" target="_blank" rel="noopener noreferrer">Code</a></p>
       </article>
 
       <article>
