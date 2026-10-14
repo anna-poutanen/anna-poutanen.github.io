@@ -152,10 +152,11 @@
 
       <article>
         <h3>Semantic Search Engine</h3>
-        <p class="when">Oct. 2026 &ndash; Present &middot; Python, MLX, SQLite</p>
+        <p class="when">Oct. 2026 &ndash; Present &middot; Python, TypeScript, MLX, SQLite</p>
         <ul>
-          <li>Built a local code-search service with Qwen embeddings and H2O reranking; exposed a CLI/HTTP API and incremental SQLite index that reuses embeddings across edits, restarts, and branch switches.</li>
-          <li>Benchmarked 20 frozen Requests queries: dense search ran at 89 ms median HTTP latency; hybrid H2O reranking placed 16/16 targets first, versus 10/16 for BM25.</li>
+          <li>Built local semantic code search for Python, JavaScript, and TypeScript using Qwen embeddings, SQLite keyword/vector retrieval, and incremental indexing with persistent embedding reuse.</li>
+          <li>Released a VS Code preview and MCP integration supporting file watching, unsaved-buffer search, cancellation, and token-budgeted context for coding agents.</li>
+          <li>Evaluated 106 frozen queries across 5 repositories, retrieving complete source evidence for 83/88 positive cases; measured 175 ms p95 HTTP latency on a held-out repository.</li>
         </ul>
         <p><a href="https://github.com/anna-poutanen/semantic-search-engine" target="_blank" rel="noopener noreferrer">Code</a></p>
       </article>
