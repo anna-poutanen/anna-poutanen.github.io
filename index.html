@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anna Poutanen</title>
 
-  <meta name="description" content="Anna Poutanen — Software Engineering at the University of Waterloo. Software Engineer &amp; Project Manager at Ascendance Foundry." />
+  <meta name="description" content="Anna Poutanen — Software Engineering at Waterloo. Building coding-agent benchmarks at Mercor and trading systems at Ascendance Foundry." />
   <meta name="author" content="Anna Poutanen" />
   <meta name="theme-color" content="#0e0e0e" />
   <link rel="canonical" href="https://anna-poutanen.github.io/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Anna Poutanen" />
-  <meta property="og:description" content="Software Engineering at the University of Waterloo. Building AI and data tools." />
+  <meta property="og:description" content="Software Engineering at the University of Waterloo. Building coding-agent benchmarks at Mercor and trading systems at Ascendance Foundry." />
   <meta property="og:url" content="https://anna-poutanen.github.io/" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Anna Poutanen" />
-  <meta name="twitter:description" content="Software Engineering at the University of Waterloo. Building AI and data tools." />
+  <meta name="twitter:description" content="Software Engineering at the University of Waterloo. Building coding-agent benchmarks at Mercor and trading systems at Ascendance Foundry." />
 
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230e0e0e'/><text x='16' y='23' text-anchor='middle' fill='%23e6e6e6' font-family='Helvetica,Arial,sans-serif' font-size='21' font-weight='600'>A</text></svg>" />
@@ -41,10 +41,11 @@
     <!-- ============================= HOME ============================= -->
     <section data-route="/">
       <p>
-        Currently a Software Engineer and Project Manager at Ascendance Foundry in Toronto,
-        building backend APIs and PostgreSQL schemas on Google Cloud for a trading platform.
-        I&rsquo;m interested in applied machine learning, full-stack work, and systems that hold
-        up in production. Looking for a Winter 2027 co-op.
+        Currently a Software Engineer at Mercor, building coding-agent benchmarks and
+        verification tools, and a Software Engineer and Project Manager at Ascendance
+        Foundry, building backend systems for a trading platform. I&rsquo;m interested in applied
+        machine learning, full-stack work, and systems that hold up in production. Looking
+        for a Winter 2027 co-op.
       </p>
       <p class="row">
         <a href="mailto:a2poutan@uwaterloo.ca">Email</a>
@@ -56,13 +57,23 @@
       <ul class="plain">
         <li><b>Languages</b> &mdash; Python, Rust, C, C++, Java, TypeScript, JavaScript, HTML/CSS, SQL, Verilog</li>
         <li><b>Frameworks</b> &mdash; React, Node.js, Flask, TensorFlow, pandas, NumPy, Matplotlib, pytest</li>
-        <li><b>Tools</b> &mdash; Git, Docker, Linux, PostgreSQL, REST APIs, LaTeX</li>
+        <li><b>Tools</b> &mdash; Git, Docker, Linux, PostgreSQL, Google Cloud, REST APIs, LaTeX</li>
       </ul>
     </section>
 
     <!-- ========================== EXPERIENCE ========================== -->
     <section data-route="/experience" hidden>
       <h2>Experience</h2>
+
+      <article>
+        <h3>Software Engineer <span class="at">&mdash; Mercor</span></h3>
+        <p class="when">Sept. 2026 &ndash; Present</p>
+        <ul>
+          <li>Build Vibe Code Bench, a 2,000+-task benchmark for frontier coding agents featured in APEX Benchmarks.</li>
+          <li>Built layered verifiers using API contract tests, PostgreSQL state checks, and rubric-scored headless-browser flows.</li>
+          <li>Built a pipeline running 10+ coding agents in parallel to repair and deliver 130+ benchmark tasks, with automated quality checks and CI failure recovery.</li>
+        </ul>
+      </article>
 
       <article>
         <h3>Software Engineer &amp; Project Manager <span class="at">&mdash; Ascendance Foundry</span></h3>
@@ -128,8 +139,8 @@
         <h3>PgDog <span class="at">&mdash; Open Source</span></h3>
         <p class="when">Oct. 2026 &middot; Rust, PostgreSQL</p>
         <ul>
-          <li>Authored a Rust parser fix restoring PostgreSQL-compatible handling of <code>SET LOCAL &hellip; DEFAULT</code>, preventing unintended session timeout resets; added regression tests for simple and extended query protocols.</li>
-          <li>Proposed a query-rewrite fix preserving client parameter types and bindings in prepared <code>EXPLAIN</code> queries; added unit and integration coverage across single-database and sharded endpoints.</li>
+          <li>Fixed <code>SET LOCAL &hellip; DEFAULT</code> handling in Rust, preserving session timeouts and warnings outside transactions; tested simple/extended protocols against PostgreSQL and sharded/unsharded PgDog.</li>
+          <li>Proposed a prepared <code>EXPLAIN</code> fix preserving parameter types and bindings through generated placeholders; tested reordered parameters and repeated execution on single-database and sharded endpoints.</li>
         </ul>
         <p>
           <a href="https://github.com/pgdogdev/pgdog/pull/1778" target="_blank" rel="noopener noreferrer">Merged PR #1778</a> &middot;
@@ -140,19 +151,16 @@
       <article>
         <h3>PostHog <span class="at">&mdash; Open Source</span></h3>
         <p class="when">Oct. 2026 &middot; TypeScript, OpenTelemetry</p>
-        <p>
-          Authored a patch restoring missing Pydantic AI tool arguments and results in
-          PostHog&rsquo;s AI observability, preserving compatibility with legacy OpenTelemetry
-          attributes. I added regression coverage for structured payloads, scalar results,
-          and attribute precedence, and validated the patch through Kafka ingestion,
-          ClickHouse persistence, and Playwright checks of the Conversation view.
-        </p>
+        <ul>
+          <li>Restored Pydantic AI tool inputs and outputs in PostHog&rsquo;s Conversation view with a TypeScript ingestion patch mapping OpenTelemetry attributes with independent legacy fallbacks.</li>
+          <li>Added regression tests for attribute precedence and scalars; validated Pydantic AI instrumentation v3/v5 through Kafka, Node.js, and ClickHouse, plus Playwright UI checks.</li>
+        </ul>
         <p><a href="https://github.com/PostHog/posthog/pull/114989" target="_blank" rel="noopener noreferrer">Open PR #114989</a></p>
       </article>
 
       <article>
         <h3>Semantic Search Engine</h3>
-        <p class="when">Oct. 2026 &ndash; Present &middot; Python, TypeScript, MLX, SQLite</p>
+        <p class="when">Sept. 2026 &ndash; Present &middot; Python, TypeScript, MLX, SQLite</p>
         <ul>
           <li>Built local semantic code search for Python, JavaScript, and TypeScript using Qwen embeddings, SQLite keyword/vector retrieval, and incremental indexing with persistent embedding reuse.</li>
           <li>Released a VS Code preview and MCP integration supporting file watching, unsaved-buffer search, cancellation, and token-budgeted context for coding agents.</li>
@@ -242,7 +250,7 @@
           <li>Bachelor of Software Engineering, cumulative average 87%.</li>
           <li>Varsity Nordic Skiing Team captain.</li>
           <li>Athletics Class Representative, Software Engineering 2030.</li>
-          <li>Alumni Women in Technology Scholarship ($6,000), President&rsquo;s Scholarship of Distinction ($2,000), and a UW Athletic Financial Award ($500).</li>
+          <li>Alumni Women in Technology Scholarship, President&rsquo;s Scholarship of Distinction, and University of Waterloo Athletic Financial Award.</li>
           <li>Coursework: Software Engineering Methods (Python), Data Abstraction (C++), Programming Principles (C), Sequential Programs, Logic and Computation, Calculus 1&ndash;3.</li>
         </ul>
       </article>
